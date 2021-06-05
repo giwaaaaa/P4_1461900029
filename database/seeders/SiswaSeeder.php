@@ -15,13 +15,13 @@ class PelangganSeeder extends Seeder
     public function run()
     {
         $siswa1 = new Siswa();
-        $siswa1->nama = "Giwa";
+        $siswa1->nama_siswa = "Giwa";
         $siswa1->alamat = "Lakarsantri";
         $siswa1->save();
 
-        $pelanggan2 = new Pelanggan();
-        $pelanggan2->nama = "Ferari";
-        $pelanggan2->alamat = "Surabaya";
-        $pelanggan2->save();
+        $siswa2 = new Siswa();
+        $siswa2->nama_siswa = "Ferari";
+        $siswa2->alamat = "Surabaya";
+        $siswa2->save();
     }
 }

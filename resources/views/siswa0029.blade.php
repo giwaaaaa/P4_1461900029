@@ -29,10 +29,10 @@ text-decoration: none;
 
 <body>
     <div style="overflow-x:auto;">
-        <a class="tambah" href="{{route( 'siswa0029.create')}}">Tambah Data Siswa</a>
+        <a class="tambah" href="{{route('siswa0029.create')}}">Tambah Data Siswa</a>
 
-        <a href="{{url('guru0029/')}}">Ke Data Guru</a>
-        
+        <a href="{{url('kelas0029/')}}">Ke Data Kelas</a>
+
         <a href="{{url('filter_data0029/')}}">Mencari Data</a>
         <br></br>
         <table>
@@ -49,10 +49,10 @@ text-decoration: none;
                 @foreach ($siswa as $sis)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{$sis->nama}}</td>
+                    <td>{{$sis->nama_siswa}}</td>
                     <td>{{$sis->alamat}}</td>
                     <td>
-                        <a href="{{url('siswa0029/' . $sis->id . "/edit")}}">Edit </a>
+                        <a href="{{url('siswa0029/' . $sis->id . "/edit")}}">Edit</a>
                         |
                         <form action="{{url ('siswa0029/' . $sis->id)}}" method="post">
                             @csrf

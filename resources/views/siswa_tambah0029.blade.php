@@ -6,7 +6,7 @@
 
 <form action="{{route('siswa0029.store')}}" method="post">
     @csrf
-    Nama Siswa : <input type="text" name="nama">
+    Nama Siswa : <input type="text" name="nama_siswa">
     Alamat Siswa : <input type="text" name="alamat">
     <button type="submit">Simpan</button>
 </form>

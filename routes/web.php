@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\GuruController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\FilterController;
 
 use Illuminate\Support\Facades\Route;
@@ -23,6 +23,6 @@ Route::get('/', function () {
 
 Route::resource('siswa0029', SiswaController::class);
 
-Route::resource('guru0029', GuruController::class);
+Route::resource('kelas0029', KelasController::class);
 
 Route::resource('filter_data0029', FilterController::class);

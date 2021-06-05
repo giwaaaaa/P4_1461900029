@@ -37,8 +37,8 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
         Siswa::create([
-            'nama' => $request->nama,
-            'alamat' => $request->alamat
+            'nama' => $request->nama_siswa,
+            'alamat' => $request->alamat,
         ]);
 
         return redirect('siswa0029');
@@ -77,7 +77,7 @@ class SiswaController extends Controller
     public function update(Request $request, $id)
     {
         $siswa = Siswa::find($id);
-        $siswa->nama = $request->nama;
+        $siswa->nama = $request->nama_siswa;
         $siswa->alamat = $request->alamat;
         $siswa->save();
 

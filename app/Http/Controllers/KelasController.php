@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guru;
+use App\Models\Kelas;
+use DB;
 use Illuminate\Http\Request;
 
-class GuruController extends Controller
+class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,10 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = Guru::all();
-        return view('guru0029', ['guru'=>$guru]);
+        $kelas = DB::table('kelas')->join('siswa','kelas.id_siswa','=','siswa.id')
+        ->join('guru','kelas.id_guru','=','guru.id')
+        ->get();
+        return view('kelas0029', ['kelas'=>$kelas]);
     }
 
     /**
@@ -25,7 +28,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        return view('guru_tambah0029');
+        //
     }
 
     /**
@@ -36,12 +39,7 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        Guru::create([
-            'nama' => $request->nama,
-            'mengajar' => $request->mengajar
-        ]);
-
-        return redirect('guru0029');
+       //
     }
 
     /**
@@ -63,8 +61,7 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        $guru = Guru::find($id);
-        return view('guru_edit0029', ['guru'=>$guru]);
+      //
     }
 
     /**
@@ -76,12 +73,7 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $guru = Siswa::find($id);
-        $guru->nama = $request->nama;
-        $guru->mengajar = $request->mengajar;
-        $guru->save();
-
-        return redirect('guru0029');
+        //
     }
 
     /**
@@ -92,9 +84,6 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        $guru = Guru::find($id);
-        $guru->delete();
-
-        return redirect('guru0029');
+       //
     }
 }

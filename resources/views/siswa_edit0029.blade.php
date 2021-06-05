@@ -7,7 +7,7 @@
 <form action="{{url('siswa0029/' . $siswa->id)}}" method="post">
     @csrf
     <input type="hidden" name="_method" value="patch">
-    Nama Siswa : <input type="text" name="nama" value="{{$siswa->nama}}">
+    Nama Siswa : <input type="text" name="nama_siswa" value="{{$siswa->nama_siswa}}">
     Alamat Alamat : <input type="text" name="alamat" value="{{$siswa->alamat}}">
     <button type="submit">Simpan</button>
 </form>

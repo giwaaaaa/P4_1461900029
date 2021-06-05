@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guru;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -15,9 +14,6 @@ class FilterController extends Controller
      */
     public function index()
     {
-        $guru = Guru::all();
-        return view('filter_data0029', ['guru'=>$guru]);
-
         $siswa = Siswa::all();
         return view('filter_data0029', ['siswa'=>$siswa]);
     }

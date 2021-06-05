@@ -15,7 +15,7 @@ class Siswa extends Migration
     {
         Schema::create('siswa', function(Blueprint $table){
             $table->increment('id');
-            $table->string('nama', 50);
+            $table->string('nama_siswa', 50);
             $table->string('alamat', 100);
             $table->timestamps();
         });
