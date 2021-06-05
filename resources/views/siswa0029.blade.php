@@ -1,7 +1,7 @@
 <head>
 <meta name="viewport" content="width=device-width,
 initial-scale=1">
-<title>Data Pelanggan</title>
+<title>Data Siswa</title>
 <style>
 table {
 border-collapse: collapse;
@@ -24,33 +24,41 @@ text-decoration: none;
 </style>
 </head>
 
-<h1>Data Pelanggan (1461900029)</h1>
+<h1>Data Siswa (1461900029)</h1>
 
 
 <body>
     <div style="overflow-x:auto;">
-        <a class="tambah" href="{{route( 'pelanggan0029.create')}}">Tambah Data</a>
+        <a class="tambah" href="{{route( 'siswa0029.create')}}">Tambah Data Siswa</a>
+
+        <a href="{{url('guru0029/')}}">Ke Data Guru</a>
         
+        <a href="{{url('filter_data0029/')}}">Mencari Data</a>
+        <br></br>
         <table>
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>Alamat</th>
+                    <th>Nama Siswa</th>
+                    <th>Alamat Siswa</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no=1; ?>
-                @foreach ($pelanggan as $pel)
+                @foreach ($siswa as $sis)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{$pel->nama}}</td>
-                    <td>{{$pel->alamat}}</td>
+                    <td>{{$sis->nama}}</td>
+                    <td>{{$sis->alamat}}</td>
                     <td>
-                        <a href="">Edit </a>
+                        <a href="{{url('siswa0029/' . $sis->id . "/edit")}}">Edit </a>
                         |
-                        <a href=""> Hapus</a>
+                        <form action="{{url ('siswa0029/' . $sis->id)}}" method="post">
+                            @csrf
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

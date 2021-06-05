@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\FilterController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('pelanggan0029', PelangganController::class);
+Route::resource('siswa0029', SiswaController::class);
+
+Route::resource('guru0029', GuruController::class);
+
+Route::resource('filter_data0029', FilterController::class);

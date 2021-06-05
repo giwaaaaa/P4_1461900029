@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pelanggan extends Migration
+class Siswa extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Pelanggan extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggan', function(Blueprint $table){
+        Schema::create('siswa', function(Blueprint $table){
             $table->increment('id');
             $table->string('nama', 50);
             $table->string('alamat', 100);
@@ -28,6 +28,6 @@ class Pelanggan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelanggan');
+        Schema::dropIfExists('siswa');
     }
 }

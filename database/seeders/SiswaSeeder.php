@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Pelanggan;
+use App\Models\Siswa;
 use Illuminate\Database\Seeder;
 
 class PelangganSeeder extends Seeder
@@ -14,10 +14,10 @@ class PelangganSeeder extends Seeder
      */
     public function run()
     {
-        $pelanggan1 = new Pelanggan();
-        $pelanggan1->nama = "Giwa";
-        $pelanggan1->alamat = "Lakarsantri";
-        $pelanggan1->save();
+        $siswa1 = new Siswa();
+        $siswa1->nama = "Giwa";
+        $siswa1->alamat = "Lakarsantri";
+        $siswa1->save();
 
         $pelanggan2 = new Pelanggan();
         $pelanggan2->nama = "Ferari";

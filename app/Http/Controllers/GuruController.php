@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pelanggan;
+use App\Models\Guru;
 use Illuminate\Http\Request;
 
-class PelangganController extends Controller
+class GuruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        $pelanggan = Pelanggan::all();
-        return view('pelanggan0029', ['pelanggan'=>$pelanggan]);
+        $guru = Guru::all();
+        return view('guru0029', ['guru'=>$guru]);
     }
 
     /**
@@ -25,7 +25,7 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        //
+        return view('guru_tambah0029');
     }
 
     /**
@@ -36,7 +36,12 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Guru::create([
+            'nama' => $request->nama,
+            'mengajar' => $request->mengajar
+        ]);
+
+        return redirect('guru0029');
     }
 
     /**
@@ -58,7 +63,8 @@ class PelangganController extends Controller
      */
     public function edit($id)
     {
-        //
+        $guru = Guru::find($id);
+        return view('guru_edit0029', ['guru'=>$guru]);
     }
 
     /**
@@ -70,7 +76,12 @@ class PelangganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $guru = Siswa::find($id);
+        $guru->nama = $request->nama;
+        $guru->mengajar = $request->mengajar;
+        $guru->save();
+
+        return redirect('guru0029');
     }
 
     /**
@@ -81,6 +92,9 @@ class PelangganController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $guru = Guru::find($id);
+        $guru->delete();
+
+        return redirect('guru0029');
     }
 }
